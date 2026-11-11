@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Global Luxury Consortium | London & Global Private Lifestyle Management</title>
+    <meta name="description" content="The Global Luxury Consortium (TGLC) is a London-based private lifestyle-management house for ultra-high-net-worth individuals, families, and family offices." />
+    <meta property="og:title" content="The Global Luxury Consortium | London & Global Private Lifestyle Management" />
+    <meta property="og:description" content="Private lifestyle management for those who move differently. Discretion by default, London intelligence, global access." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Global Luxury Consortium" />
+    <meta name="twitter:description" content="Private lifestyle management for those who move differently. TGLC House, 3rd Floor, 45 Albemarle Street, London W1S 4JL." />
+    <script>
+      // Defensive protection against browser extensions (e.g. Phantom, MetaMask, evmAsk)
+      // that attempt non-configurable Object.defineProperty collisions on window.ethereum
+      (function() {
+        try {
+          const originalDefine = Object.defineProperty;
+          Object.defineProperty = function(obj, prop, descriptor) {
+            if (obj === window && (prop === 'ethereum' || prop === 'solana')) {
+              try {
+                return originalDefine.call(Object, obj, prop, {
+                  ...descriptor,
+                  configurable: true
+                });
+              } catch (e) {
+                try {
+                  obj[prop] = descriptor.value;
+                } catch (_) {}
+                return obj;
+              }
+            }
+            return originalDefine.apply(Object, arguments);
+          };
+        } catch (_) {}
+
+        // Global uncaught error filter for third-party browser extensions
+        window.addEventListener('error', function(e) {
+          if (
+            (e.filename && (
+              e.filename.startsWith('chrome-extension://') ||
+              e.filename.startsWith('moz-extension://') ||
+              e.filename.includes('evmAsk.js')
+            )) ||
+            (e.message && (
+              e.message.includes('Cannot redefine property: ethereum') ||
+              e.message.includes('evmAsk')
+            ))
+          ) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307080B'/><text x='16' y='21' font-family='serif' font-size='14' fill='%23B98633' font-weight='bold' text-anchor='middle' letter-spacing='1'>TGLC</text></svg>" />
+  </head>
+  <body class="bg-[#07080B] text-[#FAF7F0] antialiased selection:bg-[#B98633]/30 selection:text-[#FAF7F0]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

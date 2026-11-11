@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-tglc-black: #07080B;
+  --color-tglc-charcoal: #0D1017;
+  --color-tglc-surface: #131722;
+  --color-tglc-ivory: #FAF7F0;
+  --color-tglc-stone: #D4D8E2;
+  --color-tglc-muted: #8F98AA;
+  --color-tglc-gold: #B98633;
+  --color-tglc-gold-bright: #E2BA6B;
+  --color-tglc-gold-glint: #F0CC83;
+  --color-tglc-gold-mid: #CFA85E;
+  --color-tglc-gold-dark: #8B672B;
+  --color-tglc-bronze: #735320;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #07080B;
+  color: #D4D8E2;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-editorial {
+  font-family: var(--font-serif);
+  color: #FAF7F0;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Typographic hierarchy helpers for stark contrast between headlines, prose, kickers & telemetry */
+.tglc-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E2BA6B;
+  font-weight: 500;
+}
+
+.tglc-prose {
+  font-family: var(--font-sans);
+  color: #D4D8E2;
+  line-height: 1.75;
+  letter-spacing: 0.008em;
+}
+
+.tglc-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #8F98AA;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Calibrated brushed antique bronze-gold button styling matching TGLC crest */
+.btn-gold {
+  background: linear-gradient(135deg, #F0CC83 0%, #E2BA6B 38%, #C4933F 72%, #8B672B 100%);
+  color: #07080B;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid #CFA85E;
+  box-shadow: 0 4px 20px -2px rgba(185, 134, 51, 0.34);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, background 0.22s ease;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F7DB9C 0%, #F0CC83 38%, #E2BA6B 72%, #B98633 100%);
+  box-shadow: 0 6px 28px 0 rgba(226, 186, 107, 0.42);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  background: #0D1017;
+  color: #FAF7F0;
+  border: 1px solid #8B672B;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, color 0.22s ease, background-color 0.22s ease;
+}
+.btn-outline-gold:hover {
+  border-color: #E2BA6B;
+  color: #E2BA6B;
+  background: #131722;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07080B;
+}
+::-webkit-scrollbar-thumb {
+  background: #232736;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B672B;
+}
+
+/* Theme Remix Variances */
+html.theme-nocturne-stealth body {
+  background-color: #050608;
+  color: #D4D8E2;
+}
+
+html.theme-white-tie body {
+  background-color: #070912;
+  color: #EEF1F7;
+}
+
